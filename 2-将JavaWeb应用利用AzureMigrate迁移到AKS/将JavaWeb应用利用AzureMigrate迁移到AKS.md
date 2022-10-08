@@ -104,56 +104,9 @@ Migrate 应用容器化对应用程序进行容器化并将其迁移到 AKS。
 Airsonic，其中应用程序前端在 Linux 服务器的 Apache Tomcat
 上运行，应用程序后端在 Azure Database for MySQL 上运行。
 
-**准备 Azure 帐户**
+**配置Azure Cloud Shell**
 
-如果没有 Azure
-订阅，请在开始之前创建一个[免费帐户](https://azure.microsoft.com/pricing/free-trial/)。
-
-订阅设置完成后，你将需要一个拥有以下权限的 Azure 用户帐户：
-
--   Azure 订阅的所有者权限
-
--   注册 Azure Active Directory 应用的权限
-
-如果你刚刚创建了免费的 Azure 帐户，那么你就是订阅的所有者。
-如果你不是订阅所有者，请让所有者分配权限，如下所示：
-
-1.  在 Azure 门户中，搜索"订阅"，然后在"服务"下选择"订阅" 。
-
-> ![Search box to search for the Azure
-> subscription.](./media/image2.png)
-
-2.  在"订阅"页上，选择要在其中创建 Azure Migrate 项目的订阅。
-
-3.  在"订阅"中，选择"访问控制 (IAM)"\>"检查访问权限" 。
-
-4.  在"检查访问权限"中，搜索相关的用户帐户。
-
-5.  在"添加角色分配"中，单击"添加" 。
-
-> ![Search for a user account to check access and assign a
-> role.](./media/image3.png)
-
-6.  在"添加角色分配"中，选择"所有者"角色，然后选择帐户（本例中为
-    > azmigrateuser）。 然后单击"保存" 。
-
-> ![Opens the Add Role assignment page to assign a role to the
-> account.](./media/image4.png)
-
-7.  Azure 帐户还需要注册 Azure Active Directory 应用的权限。
-
-8.  在 Azure 门户中，导航到"Azure Active
-    > Directory"\>"用户"\>"用户设置"。
-
-9.  在"用户设置"中，验证 Azure AD
-    > 用户是否可以注册应用程序（默认情况下设置为"是"） 。
-
-> ![Verify in User Settings that users can register Active Directory
-> apps.](./media/image5.png)
-
-10. 如果"应用注册"设置设置为"否"，请请求租户/全局管理员分配所需的权限。
-    > 或者，租户/全局管理员可将"应用程序开发人员"角色分配给帐户，以允许注册
-    > Azure Active Directory 应用。
+点击Azure Portal顶部导航栏的Cloud Shell，在弹出的配置界面中点击**Show advanced settins** ，并选择所提供的资源组和指定存储账户名字和文件共享的名字，最后点击创建
 
 **设置 Airsonic 应用程序**
 
