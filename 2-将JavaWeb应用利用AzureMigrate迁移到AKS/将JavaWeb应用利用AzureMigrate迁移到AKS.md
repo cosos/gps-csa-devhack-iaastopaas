@@ -112,19 +112,13 @@ Airsonic，其中应用程序前端在 Linux 服务器的 Apache Tomcat
 
 1.  若要部署研讨会环境，请首先导航到 [Azure门户](https://portal.azure.com/)。
 
-2.  启动 Azure Cloud Shell 并运行以下命令。
+2.  启动 Azure Cloud Shell 并运行以下命令, 其中$RG_NAME为所使用的资源组名字
 
-> *Bash复制*
->
-> git clone
-> https://github.com/MicrosoftDocs/mslearn-azuremigrate-appcontainerization-javatomcat.git
->
-> cd mslearn-azuremigrate-appcontainerization-javatomcat/Java\\
-> Containerization/
->
-> chmod +x scripts/deploy.sh
->
-> ./scripts/deploy.sh \'westus2\' \'LearnAppContainerization\'
+```
+git clone https://github.com/MicrosoftDocs/mslearn-azuremigrate-appcontainerization-javatomcat.git
+cd mslearn-azuremigrate-appcontainerization-javatomcat/Java\ Containerization/
+az group deployment create --name "azuredeploy" --resource-group $RG_NAME --template-file "./azuredeploy.json" --parameters "./azuredeploy.parameters.json" --verbose
+```
 
 3.  部署完成后，资源组中将显示以下资源。
 
