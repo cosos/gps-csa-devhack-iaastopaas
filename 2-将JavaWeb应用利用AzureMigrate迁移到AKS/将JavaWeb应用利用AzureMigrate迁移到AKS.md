@@ -138,23 +138,27 @@ az group deployment create --name "azuredeploy" --resource-group $RG_NAME --temp
 
 **下载并安装 Azure Migrate: 应用容器化工具**
 
-1.  在资源组中，选择"tomcatMigrate-toolclient"虚拟机资源并使用堡垒主机登录到该资源。
+1. 在资源组中，选择"tomcatMigrate-toolclient"虚拟机资源并使用堡垒主机登录到该资源。
     > 使用"adminuser"作为用户名，"Password@123"作为密码。
     > 你将使用此计算机运行 Azure Migrate: 应用容器化工具来迁移
     > TomcatServer 上托管的 Java Web 应用。
 
-2.  登录后，请[下载](https://go.microsoft.com/fwlink/?linkid=2134571) Windows
-    > 计算机上的 Azure Migrate: 应用容器化安装程序。
+2. 登录后打开Powershell下载Microsoft Edge和Azure Migrate迁移安装脚本     
+```
+cd  C:\Users\adminuser\Desktop
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Invoke-WebRequest -UseBasicParsing -Uri 'https://c2rsetup.officeapps.live.com/c2r/downloadEdge.aspx?platform=Default&source=EdgeStablePage&Channel=Stable&language=en' -OutFile  MicrosoftEdgeSetup.exe  
+Invoke-WebRequest -UseBasicParsing -Uri 'https://download.microsoft.com/download/d/e/d/dedce2ef-6651-4b3d-9eb5-457b64d421e9/AppContainerizationInstaller.ps1' -OutFile AppContainerizationInstaller.ps1
+```
+3. 在桌面双击下载好的MicrosoftEdgeSetup.exe安装Edge浏览器
 
-3.  在管理员模式下启动 PowerShell，并运行以下命令来安装该工具。
+4. 在管理员模式下启动 PowerShell，并运行以下命令来安装该工具。
+```
+cd  C:\Users\adminuser\Desktop
+.\AppContainerizationInstaller.ps1
+```
 
-> *PowerShell复制*
->
-> cd Downloads
->
-> .\\AppContainerizationInstaller.ps1
-
-4.  打开 Microsoft Edge
+5.  打开 Microsoft Edge
     > 浏览器并浏览到 **https://toolclient:44369** 以启动该工具。
     > 如果遇到警告，请单击"高级"和"继续 toolclient"。
 
