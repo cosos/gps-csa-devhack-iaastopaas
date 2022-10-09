@@ -136,8 +136,6 @@ az group deployment create --name "azuredeploy" --resource-group $RG_NAME --temp
 
     -   密码：admin
 
-**创建Azure Container registries**  
-在Azure Portal顶部搜索栏搜索Container registries然后创建一个Standard的镜像仓库
 
 **下载并安装 Azure Migrate: 应用容器化工具**
 
